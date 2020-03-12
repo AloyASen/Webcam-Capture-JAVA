@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Implementation-Title: Gradle Jar for accessing webcam
+Implementation-Version: 01
+Main-Class: com.github.sarxos.webcam.Webcam
+

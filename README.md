@@ -1,0 +1,3 @@
+#this librarry is currently in development and need to be resurrected from the others ...
+
+more news about this java dimension of the release is to arrive soon

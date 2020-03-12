@@ -1,0 +1,23 @@
+apply plugin: 'java'
+
+repositories {
+  mavenCentral()
+  jcenter()
+}
+
+//create a single Jar with all dependencies
+task flatfile(type: Jar) {
+	manifest {
+        attributes 'Implementation-Title': 'the main app for accessing webcam',  
+        	'Implementation-Version': "01",
+        	'Main-Class': 'TakePictureExample'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+dependencies {
+  implementation group: 'com.nativelibs4java', name: 'bridj', version: '0.7.0'
+  compile project(":core")
+}
